@@ -104,9 +104,9 @@ Additionally we can strip out symbols with the `-s` flag in the above cmd.
 ***
 ## Binder
 
-After you get a static executable you will have to bind the malicious payload with a regular file
+After you get a static executable you will have to bind the malicious payload with a regular file.
 
-For `bind.py` just install modules from requirements.txt  
+For `bind.py` just install modules from requirements.txt.
 `pip install -r requirements.txt`
 
 USAGE :
